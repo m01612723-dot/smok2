@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "related_products": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Related Products",
+        "description": "You might also like these products",
+        "products_to_show": 4,
+        "button_text": "",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related_products"
+  ]
+}

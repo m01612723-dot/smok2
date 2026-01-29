@@ -1,0 +1,80 @@
+{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
+
+<section class="product-grid section">
+  <div class="container">
+    {%- if section.settings.title != blank -%}
+      <div class="product-grid__header text-center">
+        <h2 class="product-grid__title">{{ section.settings.title }}</h2>
+        {%- if section.settings.description != blank -%}
+          <p class="product-grid__description">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- liquid
+      assign collection = collection | default: collections.all
+      assign products_per_page = section.settings.products_per_page | default: 12
+    -%}
+
+    {%- paginate collection.products by products_per_page -%}
+      <div class="product-grid__wrapper">
+        <div class="product-grid__products grid grid--4">
+          {%- for product in collection.products -%}
+            {% render 'product-card', product: product, lazy_load: forloop.index > 4 %}
+          {%- else -%}
+            <div class="product-grid__empty">
+              <p>{{ 'collections.general.no_products' | t }}</p>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <div class="product-grid__pagination">
+            {%- if paginate.previous -%}
+              <a href="{{ paginate.previous.url }}" class="btn btn--secondary">
+                {{ 'general.pagination.previous' | t }}
+              </a>
+            {%- endif -%}
+
+            <span class="product-grid__pagination-info">
+              {{ 'general.pagination.page' | t: current: paginate.current_page, total: paginate.pages }}
+            </span>
+
+            {%- if paginate.next -%}
+              <a href="{{ paginate.next.url }}" class="btn btn--secondary">
+                {{ 'general.pagination.next' | t }}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "label": "Products per page",
+      "default": 12
+    }
+  ]
+}
+{% endschema %}

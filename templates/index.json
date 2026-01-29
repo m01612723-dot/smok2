@@ -1,0 +1,129 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "subheading": "Premium Smoking Accessories",
+        "heading": "Elevate Your Experience",
+        "text": "<p>Discover our curated collection of high-quality smoking accessories and lifestyle products.</p>",
+        "button_primary_text": "Shop Now",
+        "button_primary_link": "/collections/all",
+        "button_secondary_text": "Learn More",
+        "button_secondary_link": "/pages/about"
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Featured Products",
+        "description": "Discover our best-selling products",
+        "products_to_show": 4,
+        "button_text": "View All Products",
+        "button_link": "/collections/all"
+      }
+    },
+    "subscription_preview": {
+      "type": "subscription-preview",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "text": "Free shipping on all boxes"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "text": "Exclusive member discounts"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "text": "Cancel anytime"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {
+        "title": "Monthly Subscription Box",
+        "subtitle": "Curated products delivered to your door every month",
+        "description": "<p>Get exclusive access to premium products, special discounts, and surprise items in every box.</p>",
+        "button_text": "View Subscription Plans",
+        "button_link": "/pages/subscriptions"
+      }
+    },
+    "usp_benefits": {
+      "type": "usp-benefits",
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Premium Quality",
+            "description": "Only the highest quality products"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "title": "Fast Shipping",
+            "description": "Free shipping on orders over €50"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "title": "Secure Payment",
+            "description": "100% secure payment processing"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "title": "24/7 Support",
+            "description": "We're here to help anytime"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4"
+      ],
+      "settings": {
+        "title": "Why Choose Smokey?",
+        "subtitle": "Experience the difference with our premium service"
+      }
+    },
+    "lifestyle_community": {
+      "type": "lifestyle-community",
+      "settings": {
+        "title": "Join Our Community",
+        "subtitle": "Be part of a growing community of enthusiasts",
+        "description": "<p>Connect with like-minded individuals, share experiences, and stay updated with the latest trends and products.</p>",
+        "button_text": "Learn More",
+        "button_link": "/pages/about"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "title": "Stay Connected",
+        "subtitle": "Subscribe to get special offers, free giveaways, and updates"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_products",
+    "subscription_preview",
+    "usp_benefits",
+    "lifestyle_community",
+    "newsletter"
+  ]
+}

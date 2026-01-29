@@ -175,5 +175,10 @@
     "message": "You must be 18 years or older to access this website. Please confirm your age to continue.",
     "confirm": "I am 18 or older",
     "decline": "I am under 18"
+  },
+  "collections": {
+    "general": {
+      "no_products": "No products found"
+    }
   }
 }

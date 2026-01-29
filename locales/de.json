@@ -175,5 +175,10 @@
     "message": "Sie müssen mindestens 18 Jahre alt sein, um auf diese Website zugreifen zu können. Bitte bestätigen Sie Ihr Alter, um fortzufahren.",
     "confirm": "Ich bin 18 oder älter",
     "decline": "Ich bin unter 18"
+  },
+  "collections": {
+    "general": {
+      "no_products": "Keine Produkte gefunden"
+    }
   }
 }
