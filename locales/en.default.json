@@ -1,0 +1,179 @@
+{
+  "general": {
+    "password_page": {
+      "opening_soon": "Coming Soon",
+      "spread_the_word": "Be the first to know when we launch!",
+      "password": "Password",
+      "enter": "Enter",
+      "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"link link--primary\">Log in here</a>"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "404": {
+      "title": "Page Not Found",
+      "subtext": "The page you're looking for doesn't exist.",
+      "button": "Continue Shopping"
+    },
+    "accessibility": {
+      "skip_to_text": "Skip to content",
+      "refresh_page": "Choosing a selection results in a full page refresh.",
+      "loading": "Loading...",
+      "link_messages": {
+        "new_window": "Opens in a new window."
+      }
+    },
+    "newsletter": {
+      "email": "Email",
+      "submit": "Subscribe",
+      "success": "Thanks for subscribing!",
+      "error": "Please enter a valid email address."
+    },
+    "search": {
+      "title": "Search",
+      "placeholder": "Search products...",
+      "submit": "Search",
+      "no_results": "No results found for \"{{ terms }}\"."
+    },
+    "cart": {
+      "title": "Your Cart",
+      "empty": "Your cart is empty",
+      "continue_shopping": "Continue Shopping",
+      "subtotal": "Subtotal",
+      "checkout": "Checkout",
+      "taxes_and_shipping": "Taxes and shipping calculated at checkout",
+      "update": "Update",
+      "remove": "Remove"
+    },
+    "social": {
+      "share": "Share",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "youtube": "YouTube",
+      "tiktok": "TikTok"
+    }
+  },
+  "sections": {
+    "header": {
+      "menu": "Menu",
+      "cart": "Cart",
+      "account": "Account"
+    },
+    "footer": {
+      "newsletter_title": "Stay Connected",
+      "newsletter_text": "Subscribe to get special offers and updates",
+      "legal": "Legal",
+      "quick_links": "Quick Links"
+    },
+    "hero": {
+      "view_products": "Shop Now",
+      "learn_more": "Learn More"
+    },
+    "featured_products": {
+      "title": "Featured Products",
+      "view_all": "View All"
+    },
+    "subscription_preview": {
+      "title": "Monthly Subscription Box",
+      "subtitle": "Curated products delivered to your door every month",
+      "cta": "View Plans"
+    },
+    "usp_benefits": {
+      "title": "Why Choose Smokey?"
+    },
+    "lifestyle_community": {
+      "title": "Join Our Community",
+      "subtitle": "Be part of a growing community of enthusiasts"
+    },
+    "cart": {
+      "cart_error": "There was an error updating your cart. Please try again.",
+      "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "price": "Price",
+      "compare_at_price": "Regular Price",
+      "unit_price": "Unit Price",
+      "view_full_details": "View Full Details",
+      "include_taxes": "Tax included.",
+      "shipping_policy_html": "Shipping calculated at checkout.",
+      "description": "Description",
+      "share": "Share this product"
+    },
+    "facets": {
+      "filter_by": "Filter",
+      "sort_by": "Sort by:",
+      "availability": "Availability",
+      "price": "Price",
+      "clear_all": "Clear all",
+      "apply": "Apply",
+      "clear": "Clear",
+      "from": "From",
+      "to": "To",
+      "product_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      }
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "My Account",
+      "details": "Account Details",
+      "orders": "Order History",
+      "addresses": "Addresses",
+      "logout": "Log Out"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "forgot_password": "Forgot your password?",
+      "sign_in": "Sign In",
+      "new_customer": "New customer?",
+      "create_account": "Create Account"
+    },
+    "register": {
+      "title": "Create Account",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create Account"
+    },
+    "orders": {
+      "title": "Order History",
+      "order_number": "Order",
+      "date": "Date",
+      "payment_status": "Payment Status",
+      "fulfillment_status": "Fulfillment Status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    }
+  },
+  "contact": {
+    "form": {
+      "title": "Contact Us",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+      "error": "Please complete all required fields."
+    }
+  },
+  "age_verification": {
+    "title": "Age Verification",
+    "message": "You must be 18 years or older to access this website. Please confirm your age to continue.",
+    "confirm": "I am 18 or older",
+    "decline": "I am under 18"
+  }
+}

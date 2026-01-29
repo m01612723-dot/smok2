@@ -1,0 +1,110 @@
+{%- comment -%}
+  Renders product price information
+  
+  Accepts:
+  - product: {Object} Product object
+  - variant: {Object} Product variant object (optional)
+{%- endcomment -%}
+
+{%- liquid
+  if variant
+    assign target = variant
+  else
+    assign target = product.selected_or_first_available_variant
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price
+  assign available = target.available
+  assign money_price = price | money
+  assign price_min = product.price_min
+  assign price_max = product.price_max
+  assign available = product.available | default: false
+  assign price_varies = false
+  if price_min != price_max
+    assign price_varies = true
+  endif
+-%}
+
+<div class="price
+  {%- if compare_at_price > price %} price--on-sale{% endif -%}
+  {%- if available == false %} price--sold-out {% endif -%}
+  {%- if price_varies %} price--varies {%- endif -%}">
+  
+  <div class="price__container">
+    {%- if compare_at_price > price -%}
+      <span class="price__compare">
+        {{ compare_at_price | money }}
+      </span>
+    {%- endif -%}
+    
+    <span class="price__current">
+      {%- if price_varies -%}
+        {{ 'products.product.price.from_price_html' | t: price: money_price }}
+      {%- else -%}
+        {{ money_price }}
+      {%- endif -%}
+    </span>
+  </div>
+
+  {%- if available == false -%}
+    <span class="price__badge price__badge--sold-out">
+      {{ 'products.product.sold_out' | t }}
+    </span>
+  {%- elsif compare_at_price > price -%}
+    <span class="price__badge price__badge--sale">
+      {{ 'products.product.on_sale' | t }}
+    </span>
+  {%- endif -%}
+</div>
+
+<style>
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .price__container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .price__current {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .price__compare {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+  }
+
+  .price__badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+  }
+
+  .price__badge--sold-out {
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+  }
+
+  .price__badge--sale {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+  }
+
+  .price--sold-out .price__current {
+    color: var(--color-text-muted);
+  }
+</style>

@@ -1,0 +1,179 @@
+{
+  "general": {
+    "password_page": {
+      "opening_soon": "Bald verfügbar",
+      "spread_the_word": "Sei der Erste, der erfährt, wann wir starten!",
+      "password": "Passwort",
+      "enter": "Eintreten",
+      "admin_link_html": "Sind Sie der Shop-Besitzer? <a href=\"/admin\" class=\"link link--primary\">Hier anmelden</a>"
+    },
+    "meta": {
+      "tags": "Markiert \"{{ tags }}\"",
+      "page": "Seite {{ page }}"
+    },
+    "404": {
+      "title": "Seite nicht gefunden",
+      "subtext": "Die gesuchte Seite existiert nicht.",
+      "button": "Weiter einkaufen"
+    },
+    "accessibility": {
+      "skip_to_text": "Zum Inhalt springen",
+      "refresh_page": "Die Auswahl einer Auswahl führt zu einer Aktualisierung der gesamten Seite.",
+      "loading": "Wird geladen...",
+      "link_messages": {
+        "new_window": "Öffnet in einem neuen Fenster."
+      }
+    },
+    "newsletter": {
+      "email": "E-Mail",
+      "submit": "Abonnieren",
+      "success": "Vielen Dank für Ihr Abonnement!",
+      "error": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+    },
+    "search": {
+      "title": "Suche",
+      "placeholder": "Produkte suchen...",
+      "submit": "Suchen",
+      "no_results": "Keine Ergebnisse für \"{{ terms }}\" gefunden."
+    },
+    "cart": {
+      "title": "Ihr Warenkorb",
+      "empty": "Ihr Warenkorb ist leer",
+      "continue_shopping": "Weiter einkaufen",
+      "subtotal": "Zwischensumme",
+      "checkout": "Zur Kasse",
+      "taxes_and_shipping": "Steuern und Versand werden an der Kasse berechnet",
+      "update": "Aktualisieren",
+      "remove": "Entfernen"
+    },
+    "social": {
+      "share": "Teilen",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "youtube": "YouTube",
+      "tiktok": "TikTok"
+    }
+  },
+  "sections": {
+    "header": {
+      "menu": "Menü",
+      "cart": "Warenkorb",
+      "account": "Konto"
+    },
+    "footer": {
+      "newsletter_title": "Bleib verbunden",
+      "newsletter_text": "Abonnieren Sie, um Sonderangebote und Updates zu erhalten",
+      "legal": "Rechtliches",
+      "quick_links": "Schnelllinks"
+    },
+    "hero": {
+      "view_products": "Jetzt einkaufen",
+      "learn_more": "Mehr erfahren"
+    },
+    "featured_products": {
+      "title": "Empfohlene Produkte",
+      "view_all": "Alle anzeigen"
+    },
+    "subscription_preview": {
+      "title": "Monatliche Abo-Box",
+      "subtitle": "Kuratierte Produkte jeden Monat direkt zu Ihnen nach Hause geliefert",
+      "cta": "Pläne ansehen"
+    },
+    "usp_benefits": {
+      "title": "Warum Smokey wählen?"
+    },
+    "lifestyle_community": {
+      "title": "Tritt unserer Community bei",
+      "subtitle": "Werde Teil einer wachsenden Community von Enthusiasten"
+    },
+    "cart": {
+      "cart_error": "Beim Aktualisieren Ihres Warenkorbs ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "cart_quantity_error_html": "Sie können nur {{ quantity }} dieses Artikels in Ihren Warenkorb legen."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "In den Warenkorb",
+      "sold_out": "Ausverkauft",
+      "unavailable": "Nicht verfügbar",
+      "quantity": "Menge",
+      "price": "Preis",
+      "compare_at_price": "Regulärer Preis",
+      "unit_price": "Stückpreis",
+      "view_full_details": "Vollständige Details anzeigen",
+      "include_taxes": "Inkl. MwSt.",
+      "shipping_policy_html": "Versand wird an der Kasse berechnet.",
+      "description": "Beschreibung",
+      "share": "Dieses Produkt teilen"
+    },
+    "facets": {
+      "filter_by": "Filtern",
+      "sort_by": "Sortieren nach:",
+      "availability": "Verfügbarkeit",
+      "price": "Preis",
+      "clear_all": "Alle löschen",
+      "apply": "Anwenden",
+      "clear": "Löschen",
+      "from": "Von",
+      "to": "Bis",
+      "product_count": {
+        "one": "{{ count }} Produkt",
+        "other": "{{ count }} Produkte"
+      }
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Mein Konto",
+      "details": "Kontodetails",
+      "orders": "Bestellverlauf",
+      "addresses": "Adressen",
+      "logout": "Abmelden"
+    },
+    "login": {
+      "title": "Anmelden",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "forgot_password": "Passwort vergessen?",
+      "sign_in": "Anmelden",
+      "new_customer": "Neuer Kunde?",
+      "create_account": "Konto erstellen"
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Konto erstellen"
+    },
+    "orders": {
+      "title": "Bestellverlauf",
+      "order_number": "Bestellung",
+      "date": "Datum",
+      "payment_status": "Zahlungsstatus",
+      "fulfillment_status": "Erfüllungsstatus",
+      "total": "Gesamt",
+      "none": "Sie haben noch keine Bestellungen aufgegeben."
+    }
+  },
+  "contact": {
+    "form": {
+      "title": "Kontaktieren Sie uns",
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefonnummer",
+      "message": "Nachricht",
+      "submit": "Nachricht senden",
+      "success": "Vielen Dank, dass Sie uns kontaktiert haben. Wir werden uns so schnell wie möglich bei Ihnen melden.",
+      "error": "Bitte füllen Sie alle erforderlichen Felder aus."
+    }
+  },
+  "age_verification": {
+    "title": "Altersüberprüfung",
+    "message": "Sie müssen mindestens 18 Jahre alt sein, um auf diese Website zugreifen zu können. Bitte bestätigen Sie Ihr Alter, um fortzufahren.",
+    "confirm": "Ich bin 18 oder älter",
+    "decline": "Ich bin unter 18"
+  }
+}

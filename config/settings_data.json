@@ -1,0 +1,27 @@
+{
+  "current": {
+    "color_primary": "#39FF14",
+    "color_background": "#0D0D0D",
+    "color_surface": "#1A1A1A",
+    "color_text": "#FFFFFF",
+    "color_text_muted": "#9CA3AF",
+    "type_header_font": "assistant_n4",
+    "type_body_font": "assistant_n4",
+    "page_width": 1280,
+    "spacing_sections": 64,
+    "cart_type": "drawer",
+    "age_verification_enabled": true,
+    "age_verification_title": "Age Verification",
+    "age_verification_message": "You must be 18 years or older to access this website. Please confirm your age to continue.",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    }
+  }
+}
