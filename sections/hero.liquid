@@ -1,0 +1,119 @@
+{{ 'component-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="hero section--large">
+  <div class="hero__inner container">
+    <div class="hero__content">
+      {%- if section.settings.subheading != blank -%}
+        <p class="hero__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+
+      <h1 class="hero__heading">
+        {{ section.settings.heading | default: 'Welcome to Smokey' }}
+      </h1>
+
+      {%- if section.settings.text != blank -%}
+        <p class="hero__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+
+      <div class="hero__actions">
+        {%- if section.settings.button_primary_text != blank -%}
+          <a
+            href="{{ section.settings.button_primary_link }}"
+            class="btn btn--primary btn--large"
+          >
+            {{ section.settings.button_primary_text }}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.button_secondary_text != blank -%}
+          <a
+            href="{{ section.settings.button_secondary_link }}"
+            class="btn btn--outline btn--large"
+          >
+            {{ section.settings.button_secondary_text }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.settings.image != blank -%}
+      <div class="hero__image">
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          alt="{{ section.settings.image.alt | escape }}"
+          width="800"
+          height="auto"
+          loading="eager"
+        >
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Premium Smoking Accessories"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Elevate Your Experience"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Discover our curated collection of high-quality smoking accessories and lifestyle products.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Primary Button"
+    },
+    {
+      "type": "text",
+      "id": "button_primary_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_primary_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Secondary Button"
+    },
+    {
+      "type": "text",
+      "id": "button_secondary_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_secondary_link",
+      "label": "Button Link",
+      "default": "/pages/about"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

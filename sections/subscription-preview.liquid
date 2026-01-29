@@ -1,0 +1,136 @@
+{{ 'component-subscription-preview.css' | asset_url | stylesheet_tag }}
+
+<section class="subscription-preview section">
+  <div class="container">
+    <div class="subscription-preview__inner">
+      <div class="subscription-preview__content">
+        <h2 class="subscription-preview__title">
+          {{ section.settings.title | default: 'Monthly Subscription Box' }}
+        </h2>
+        
+        <p class="subscription-preview__subtitle">
+          {{ section.settings.subtitle | default: 'Curated products delivered to your door every month' }}
+        </p>
+
+        {%- if section.settings.description != blank -%}
+          <div class="subscription-preview__description">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+
+        <ul class="subscription-preview__features">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'feature' -%}
+              <li class="subscription-preview__feature">
+                <div class="subscription-preview__feature-icon">
+                  {% render 'icon-check' %}
+                </div>
+                <span>{{ block.settings.text }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_link }}" class="btn btn--primary btn--large">
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.image != blank -%}
+        <div class="subscription-preview__image">
+          <img
+            src="{{ section.settings.image | image_url: width: 600 }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="600"
+            height="auto"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Subscription Preview",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Monthly Subscription Box"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Curated products delivered to your door every month"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Get exclusive access to premium products, special discounts, and surprise items in every box.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "View Subscription Plans"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/pages/subscriptions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Free shipping on all boxes"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscription Preview",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "text": "Free shipping on all boxes"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "Exclusive member discounts"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "Cancel anytime"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

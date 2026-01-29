@@ -1,0 +1,63 @@
+/* Lifestyle Community Component Styles */
+
+.lifestyle-community {
+  background: linear-gradient(
+    135deg,
+    var(--color-background) 0%,
+    var(--color-surface) 100%
+  );
+}
+
+.lifestyle-community__inner {
+  display: grid;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .lifestyle-community__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lifestyle-community__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.lifestyle-community__title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.lifestyle-community__subtitle {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.lifestyle-community__description {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.lifestyle-community__image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.lifestyle-community__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .lifestyle-community__image {
+    order: -1;
+  }
+}
