@@ -1,0 +1,124 @@
+{{ 'component-usp-benefits.css' | asset_url | stylesheet_tag }}
+
+<section class="usp-benefits section">
+  <div class="container">
+    <div class="usp-benefits__header text-center">
+      <h2 class="usp-benefits__title">
+        {{ section.settings.title | default: 'Why Choose Smokey?' }}
+      </h2>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="usp-benefits__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="usp-benefits__grid grid grid--{{ section.blocks.size }}">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'benefit' -%}
+          <div class="usp-benefits__item card" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <div class="usp-benefits__icon">
+                <img
+                  src="{{ block.settings.icon | image_url: width: 100 }}"
+                  alt="{{ block.settings.title | escape }}"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                >
+              </div>
+            {%- else -%}
+              <div class="usp-benefits__icon usp-benefits__icon--default">
+                {% render 'icon-check' %}
+              </div>
+            {%- endif -%}
+
+            <h3 class="usp-benefits__item-title">{{ block.settings.title }}</h3>
+            
+            {%- if block.settings.description != blank -%}
+              <p class="usp-benefits__item-description">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "USP Benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Choose Smokey?"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Experience the difference with our premium service"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Premium Quality"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Only the highest quality products make it to our store"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "USP Benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "title": "Premium Quality",
+            "description": "Only the highest quality products"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "title": "Fast Shipping",
+            "description": "Free shipping on orders over €50"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "title": "Secure Payment",
+            "description": "100% secure payment processing"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "title": "24/7 Support",
+            "description": "We're here to help anytime"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

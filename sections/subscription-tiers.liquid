@@ -1,0 +1,157 @@
+{{ 'component-subscription-tiers.css' | asset_url | stylesheet_tag }}
+
+<section class="subscription-tiers section">
+  <div class="container">
+    <div class="subscription-tiers__header text-center">
+      <h2 class="subscription-tiers__title">
+        {{ section.settings.title | default: 'Choose Your Plan' }}
+      </h2>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="subscription-tiers__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="subscription-tiers__grid grid grid--3">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'tier' -%}
+          <div class="subscription-tier card {% if block.settings.featured %}subscription-tier--featured{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.featured -%}
+              <div class="subscription-tier__badge">Most Popular</div>
+            {%- endif -%}
+
+            <h3 class="subscription-tier__name">{{ block.settings.name }}</h3>
+            
+            <div class="subscription-tier__price">
+              <span class="subscription-tier__price-amount">€{{ block.settings.price }}</span>
+              <span class="subscription-tier__price-period">/month</span>
+            </div>
+
+            {%- if block.settings.description != blank -%}
+              <p class="subscription-tier__description">{{ block.settings.description }}</p>
+            {%- endif -%}
+
+            <ul class="subscription-tier__features">
+              {%- assign features = block.settings.features | split: '|' -%}
+              {%- for feature in features -%}
+                <li class="subscription-tier__feature">
+                  <div class="subscription-tier__feature-icon">
+                    {% render 'icon-check' %}
+                  </div>
+                  <span>{{ feature }}</span>
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            <a href="{{ block.settings.button_link }}" class="btn {% if block.settings.featured %}btn--primary{% else %}btn--outline{% endif %} btn--full">
+              {{ block.settings.button_text | default: 'Subscribe Now' }}
+            </a>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Subscription Tiers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Choose Your Plan"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Select the perfect subscription box for your needs"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Subscription Tier",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Starter"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "29.99"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Perfect for beginners"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features (separate with |)",
+          "default": "3-4 curated products|Free shipping|Members-only discounts"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured Tier",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Subscribe Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscription Tiers",
+      "blocks": [
+        {
+          "type": "tier",
+          "settings": {
+            "name": "Starter",
+            "price": "29.99",
+            "description": "Perfect for beginners",
+            "features": "3-4 curated products|Free shipping|Members-only discounts"
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "name": "Premium",
+            "price": "49.99",
+            "description": "Our most popular plan",
+            "features": "5-6 premium products|Free express shipping|Exclusive items|Priority support",
+            "featured": true
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "name": "Elite",
+            "price": "79.99",
+            "description": "For true enthusiasts",
+            "features": "7-8 luxury products|Free overnight shipping|Limited editions|VIP events access|Personal concierge"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,127 @@
+/* Customer Component Styles */
+
+.customer-account,
+.customer-login,
+.customer-register {
+  background-color: var(--color-background);
+}
+
+.customer-account__title,
+.customer-login__title,
+.customer-register__title {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.customer-account__content {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .customer-account__content {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.customer-account__info,
+.customer-account__orders {
+  padding: var(--spacing-lg);
+}
+
+.customer-account__info h2,
+.customer-account__orders h2 {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.customer-account__info p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-muted);
+}
+
+.customer-orders {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.customer-order {
+  padding: var(--spacing-md);
+  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.customer-order__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.customer-order__header h3 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.customer-order__header span {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.customer-order__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.customer-login__inner,
+.customer-register__inner {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.customer-login__form,
+.customer-register__form {
+  padding: var(--spacing-xl);
+}
+
+.customer-login__field,
+.customer-register__field {
+  margin-bottom: var(--spacing-md);
+}
+
+.customer-login__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.customer-login__recover {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.customer-login__recover:hover,
+.customer-register__login a:hover {
+  color: var(--color-primary);
+}
+
+.customer-login__create,
+.customer-register__login {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.customer-login__create p,
+.customer-register__login p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-muted);
+}

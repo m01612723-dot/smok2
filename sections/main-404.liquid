@@ -1,0 +1,20 @@
+{{ 'component-main-404.css' | asset_url | stylesheet_tag }}
+
+<section class="main-404 section--large">
+  <div class="container">
+    <div class="main-404__inner">
+      <h1 class="main-404__title">{{ 'general.404.title' | t }}</h1>
+      <p class="main-404__text">{{ 'general.404.subtext' | t }}</p>
+      <a href="{{ routes.root_url }}" class="btn btn--primary btn--large">
+        {{ 'general.404.button' | t }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404",
+  "settings": []
+}
+{% endschema %}

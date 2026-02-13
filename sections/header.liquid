@@ -1,0 +1,107 @@
+{{ 'component-header.css' | asset_url | stylesheet_tag }}
+
+<header class="header" data-header>
+  <div class="header__inner container">
+    <button
+      type="button"
+      class="header__menu-toggle hide-desktop"
+      aria-label="{{ 'sections.header.menu' | t }}"
+      data-mobile-menu-toggle
+    >
+      {% render 'icon-menu' %}
+    </button>
+
+    <a href="{{ routes.root_url }}" class="header__logo">
+      {%- if section.settings.logo != blank -%}
+        <img
+          src="{{ section.settings.logo | image_url: width: 200 }}"
+          alt="{{ shop.name }}"
+          width="200"
+          height="auto"
+        >
+      {%- else -%}
+        <span class="header__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="header__nav hide-mobile" aria-label="Primary navigation">
+      <ul class="header__menu">
+        {%- for link in section.settings.menu.links -%}
+          <li class="header__menu-item">
+            <a href="{{ link.url }}" class="header__menu-link">
+              {{ link.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{{ routes.account_url }}" class="header__action" aria-label="{{ 'sections.header.account' | t }}">
+          {% render 'icon-account' %}
+        </a>
+      {%- endif -%}
+
+      <a href="{{ routes.cart_url }}" class="header__action header__cart" aria-label="{{ 'sections.header.cart' | t }}">
+        {% render 'icon-cart' %}
+        <span class="header__cart-count" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__header">
+        <button
+          type="button"
+          class="mobile-menu__close"
+          aria-label="Close menu"
+          data-mobile-menu-close
+        >
+          {% render 'icon-close' %}
+        </button>
+      </div>
+
+      <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+        <ul class="mobile-menu__list">
+          {%- for link in section.settings.menu.links -%}
+            <li class="mobile-menu__item">
+              <a href="{{ link.url }}" class="mobile-menu__link">
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+
+      {%- if shop.customer_accounts_enabled -%}
+        <div class="mobile-menu__footer">
+          <a href="{{ routes.account_url }}" class="btn btn--outline btn--full">
+            {{ 'sections.header.account' | t }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

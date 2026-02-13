@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "subscription_tiers": {
+      "type": "subscription-tiers",
+      "blocks": {
+        "tier_1": {
+          "type": "tier",
+          "settings": {
+            "name": "Starter",
+            "price": "29.99",
+            "description": "Perfect for beginners",
+            "features": "3-4 curated products|Free shipping|Members-only discounts",
+            "featured": false,
+            "button_text": "Subscribe Now",
+            "button_link": "/cart"
+          }
+        },
+        "tier_2": {
+          "type": "tier",
+          "settings": {
+            "name": "Premium",
+            "price": "49.99",
+            "description": "Our most popular plan",
+            "features": "5-6 premium products|Free express shipping|Exclusive items|Priority support",
+            "featured": true,
+            "button_text": "Subscribe Now",
+            "button_link": "/cart"
+          }
+        },
+        "tier_3": {
+          "type": "tier",
+          "settings": {
+            "name": "Elite",
+            "price": "79.99",
+            "description": "For true enthusiasts",
+            "features": "7-8 luxury products|Free overnight shipping|Limited editions|VIP events access|Personal concierge",
+            "featured": false,
+            "button_text": "Subscribe Now",
+            "button_link": "/cart"
+          }
+        }
+      },
+      "block_order": [
+        "tier_1",
+        "tier_2",
+        "tier_3"
+      ],
+      "settings": {
+        "title": "Choose Your Plan",
+        "subtitle": "Select the perfect subscription box for your needs"
+      }
+    },
+    "subscription_faq": {
+      "type": "about-content",
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "",
+        "content": "<h3>How does the subscription work?</h3><p>Each month, we'll send you a curated box of premium products based on your subscription tier. You'll be charged automatically on the same day each month.</p><h3>Can I cancel anytime?</h3><p>Yes! You can cancel your subscription at any time from your account dashboard. No questions asked.</p><h3>Do you ship internationally?</h3><p>Currently, we ship to all EU countries. Shipping is included in your subscription price.</p>"
+      }
+    }
+  },
+  "order": [
+    "subscription_tiers",
+    "subscription_faq"
+  ]
+}

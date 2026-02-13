@@ -1,0 +1,59 @@
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+
+<section class="newsletter section">
+  <div class="container">
+    <div class="newsletter__inner">
+      <div class="newsletter__content">
+        <h2 class="newsletter__title">
+          {{ section.settings.title | default: 'Stay Connected' }}
+        </h2>
+        
+        {%- if section.settings.subtitle != blank -%}
+          <p class="newsletter__subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+      </div>
+
+      <form class="newsletter__form" data-newsletter-form>
+        <div class="newsletter__form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="{{ 'general.newsletter.email' | t }}"
+            required
+            class="newsletter__input"
+            aria-label="Email address"
+          >
+          <button type="submit" class="btn btn--primary btn--large">
+            {{ 'general.newsletter.submit' | t }}
+          </button>
+        </div>
+        <div class="newsletter-message" data-newsletter-message style="display: none;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Stay Connected"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Subscribe to get special offers, free giveaways, and updates"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

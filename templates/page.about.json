@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "about_content": {
+      "type": "about-content",
+      "blocks": {
+        "value_1": {
+          "type": "value",
+          "settings": {
+            "title": "Quality First",
+            "text": "We only offer products that meet our high standards"
+          }
+        },
+        "value_2": {
+          "type": "value",
+          "settings": {
+            "title": "Customer Focus",
+            "text": "Your satisfaction is our top priority"
+          }
+        },
+        "value_3": {
+          "type": "value",
+          "settings": {
+            "title": "Community",
+            "text": "Building connections with like-minded individuals"
+          }
+        }
+      },
+      "block_order": [
+        "value_1",
+        "value_2",
+        "value_3"
+      ],
+      "settings": {
+        "title": "About Smokey",
+        "subtitle": "Your trusted source for premium smoking accessories",
+        "content": "<p>Founded with a passion for quality and style, Smokey brings together the finest smoking accessories and lifestyle products for the modern enthusiast.</p><p>Our mission is to provide a curated selection of premium products while building a community of like-minded individuals who appreciate quality, design, and authenticity.</p>"
+      }
+    }
+  },
+  "order": [
+    "about_content"
+  ]
+}

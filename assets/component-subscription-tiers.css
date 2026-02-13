@@ -1,0 +1,131 @@
+/* Subscription Tiers Component Styles */
+
+.subscription-tiers {
+  background-color: var(--color-background);
+}
+
+.subscription-tiers__header {
+  margin-bottom: var(--spacing-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subscription-tiers__title {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.subscription-tiers__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.subscription-tiers__grid {
+  gap: var(--spacing-lg);
+}
+
+.subscription-tier {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl);
+  position: relative;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.subscription-tier:hover {
+  transform: translateY(-8px);
+}
+
+.subscription-tier--featured {
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+}
+
+.subscription-tier__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.375rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+}
+
+.subscription-tier__name {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.subscription-tier__price {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.subscription-tier__price-amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.subscription-tier__price-period {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.subscription-tier__description {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.subscription-tier__features {
+  list-style: none;
+  margin: 0 0 var(--spacing-lg);
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.subscription-tier__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.subscription-tier__feature-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  margin-top: 2px;
+}
+
+.subscription-tier__feature-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 767px) {
+  .subscription-tiers__grid {
+    grid-template-columns: 1fr;
+  }
+}

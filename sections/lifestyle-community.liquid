@@ -1,0 +1,89 @@
+{{ 'component-lifestyle-community.css' | asset_url | stylesheet_tag }}
+
+<section class="lifestyle-community section">
+  <div class="container">
+    <div class="lifestyle-community__inner">
+      <div class="lifestyle-community__content">
+        <h2 class="lifestyle-community__title">
+          {{ section.settings.title | default: 'Join Our Community' }}
+        </h2>
+        
+        {%- if section.settings.subtitle != blank -%}
+          <p class="lifestyle-community__subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="lifestyle-community__description">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_link }}" class="btn btn--primary btn--large">
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.image != blank -%}
+        <div class="lifestyle-community__image">
+          <img
+            src="{{ section.settings.image | image_url: width: 800 }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="800"
+            height="auto"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lifestyle Community",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Join Our Community"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Be part of a growing community of enthusiasts"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Connect with like-minded individuals, share experiences, and stay updated with the latest trends and products.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/pages/about"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lifestyle Community"
+    }
+  ]
+}
+{% endschema %}

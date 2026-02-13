@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "contact_form": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact Us",
+        "description": "<p>Get in touch with us. We'd love to hear from you!</p>",
+        "show_info": true,
+        "email": "hello@smokey.com",
+        "phone": "+49 123 456 7890"
+      }
+    }
+  },
+  "order": [
+    "contact_form"
+  ]
+}

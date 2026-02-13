@@ -1,0 +1,168 @@
+/* Main Cart Component Styles */
+
+.main-cart {
+  background-color: var(--color-background);
+}
+
+.main-cart__title {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.main-cart__form {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .main-cart__form {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.main-cart__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto auto auto;
+  gap: var(--spacing-md);
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+}
+
+.cart-item__image {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.cart-item__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cart-item__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cart-item__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.cart-item__variant {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.cart-item__price {
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.cart-item__quantity-input {
+  width: 80px;
+  text-align: center;
+}
+
+.cart-item__total {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  min-width: 100px;
+  text-align: right;
+}
+
+.cart-item__remove {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.cart-item__remove:hover {
+  color: #ff4444;
+}
+
+.main-cart__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  background-color: var(--color-surface);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  height: fit-content;
+}
+
+@media (min-width: 768px) {
+  .main-cart__footer {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+.main-cart__subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-border);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.main-cart__subtotal-price {
+  color: var(--color-primary);
+}
+
+.main-cart__note {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  text-align: center;
+}
+
+.main-cart__continue {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.main-cart__empty {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+}
+
+.main-cart__empty p {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 767px) {
+  .cart-item {
+    grid-template-columns: 80px 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .cart-item__quantity,
+  .cart-item__total,
+  .cart-item__remove {
+    grid-column: 2;
+  }
+}

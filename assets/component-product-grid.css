@@ -1,0 +1,65 @@
+/* Product Grid Component Styles */
+
+.product-grid {
+  background-color: var(--color-background);
+}
+
+.product-grid__header {
+  margin-bottom: var(--spacing-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-grid__title {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.product-grid__description {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.product-grid__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.product-grid__products {
+  gap: var(--spacing-lg);
+}
+
+.product-grid__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-text-muted);
+}
+
+.product-grid__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.product-grid__pagination-info {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 767px) {
+  .product-grid__products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .product-grid__pagination {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "product_grid": {
+      "type": "product-grid",
+      "settings": {
+        "title": "",
+        "description": "",
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": [
+    "product_grid"
+  ]
+}

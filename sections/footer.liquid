@@ -1,0 +1,139 @@
+{{ 'component-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <div class="footer__top">
+      <div class="footer__column footer__column--brand">
+        <a href="{{ routes.root_url }}" class="footer__logo">
+          {%- if section.settings.logo != blank -%}
+            <img
+              src="{{ section.settings.logo | image_url: width: 150 }}"
+              alt="{{ shop.name }}"
+              width="150"
+              height="auto"
+            >
+          {%- else -%}
+            <span class="footer__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+
+        {%- if section.settings.footer_text != blank -%}
+          <p class="footer__text">{{ section.settings.footer_text }}</p>
+        {%- endif -%}
+
+        <div class="footer__social">
+          {% render 'social-icons' %}
+        </div>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__heading">{{ 'sections.footer.quick_links' | t }}</h4>
+        <ul class="footer__menu">
+          {%- for link in section.settings.footer_menu.links -%}
+            <li class="footer__menu-item">
+              <a href="{{ link.url }}" class="footer__menu-link">
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__heading">{{ 'sections.footer.legal' | t }}</h4>
+        <ul class="footer__menu">
+          <li class="footer__menu-item">
+            <a href="{{ pages.privacy-policy.url }}" class="footer__menu-link">
+              Privacy Policy
+            </a>
+          </li>
+          <li class="footer__menu-item">
+            <a href="{{ pages.terms.url }}" class="footer__menu-link">
+              Terms & Conditions
+            </a>
+          </li>
+          <li class="footer__menu-item">
+            <a href="{{ pages.imprint.url }}" class="footer__menu-link">
+              Imprint
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {%- if section.settings.show_newsletter -%}
+        <div class="footer__column footer__column--newsletter">
+          <h4 class="footer__heading">{{ 'sections.footer.newsletter_title' | t }}</h4>
+          <p class="footer__newsletter-text">{{ 'sections.footer.newsletter_text' | t }}</p>
+          
+          <form class="footer__newsletter-form" data-newsletter-form>
+            <input
+              type="email"
+              name="email"
+              placeholder="{{ 'general.newsletter.email' | t }}"
+              required
+              class="footer__newsletter-input"
+            >
+            <button type="submit" class="btn btn--primary">
+              {{ 'general.newsletter.submit' | t }}
+            </button>
+            <div class="newsletter-message" data-newsletter-message style="display: none;"></div>
+          </form>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.
+      </p>
+      
+      {%- if section.settings.show_payment_icons -%}
+        <div class="footer__payment">
+          <span class="footer__payment-label">We accept:</span>
+          <div class="footer__payment-icons">
+            {%- for type in shop.enabled_payment_types -%}
+              {{ type | payment_type_svg_tag: class: 'footer__payment-icon' }}
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_text",
+      "label": "Footer Text",
+      "default": "Your trusted source for premium smoking accessories."
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer Menu",
+      "default": "footer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show Newsletter Signup",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show Payment Icons",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
