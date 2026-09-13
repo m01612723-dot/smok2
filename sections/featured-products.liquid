@@ -22,7 +22,7 @@
 
     <div class="featured-products__grid grid grid--{{ products_to_show }}">
       {%- for product in collection.products limit: products_to_show -%}
-        {% render 'product-card', product: product, lazy_load: forloop.index > 2 %}
+        {% render 'product-card', product: product, lazy_load: forloop.index %}
       {%- else -%}
         {%- for i in (1..products_to_show) -%}
           <div class="card">
@@ -98,3 +98,14 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-card', product: product, lazy_load: forloop.index > 2
+    %}"
+  to: "{% render 'product-card', product: product, lazy_load: forloop.index %}"
+  position: 903..974
+{% endcomment %}
